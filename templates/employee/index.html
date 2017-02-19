@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+
+{% block excss %}
+    <!-- DataTables CSS -->
+    <link href="{% static 'vendor/datatables-plugins/dataTables.bootstrap.css' %}" rel="stylesheet">
+
+    <!-- DataTables Responsive CSS -->
+    <link href="{% static 'vendor/datatables-responsive/dataTables.responsive.css' %}" rel="stylesheet">
+
+{% endblock %}
+
+{% block content %}
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">公司人员</h1>
+                </div>
+                <!-- /.col-lg-12 -->
+                <div>
+
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+{% block exjs %}
+    <!-- DataTables JavaScript -->
+    <script src="{% static 'vendor/datatables/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{% static 'vendor/datatables-plugins/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{% static 'vendor/datatables-responsive/dataTables.responsive.js' %}"></script>
+{% endblock %}
+
