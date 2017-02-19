@@ -14,6 +14,9 @@ class BaseModel(models.Model):
     update_user = models.CharField(max_length=40)
     remark = models.TextField()
 
+    class Meta:
+        abstract = True
+
 
 class Customer(BaseModel):
     identifier = models.CharField(max_length=20)

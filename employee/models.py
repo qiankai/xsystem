@@ -2,7 +2,7 @@ from __future__ import unicode_literals
 
 import uuid
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,AbstractUser
 from django.db.models.signals import post_save
 
 
@@ -13,6 +13,9 @@ class BaseModel(models.Model):
     create_user = models.CharField(max_length=40)
     update_user = models.CharField(max_length=40)
     remark = models.TextField()
+
+    class Meta:
+        abstract = True
 
 
 class Employee(BaseModel):
@@ -39,7 +42,7 @@ class Employee(BaseModel):
     emp_related_dt = models.ForeignKey("Department", null=True)
 
     def __unicode__(self):
-        return self.emp_name
+        return self.real_name
 
     def save(self, *args, **kwargs):
         if not self.pk:
